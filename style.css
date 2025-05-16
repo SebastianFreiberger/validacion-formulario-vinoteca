@@ -1,14 +1,16 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    /* background-color: rgb(240, 240, 238); */
-    background-image: url("./img/fondo-vinito.jpg");
+body {
+        font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url("./img/fondo-vinito.jpg"); */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe toda la pantalla */
+    overflow: hidden;
 }
 
-#registroForm{
+#registroForm {
     background-color: rgb(49 0 0 / 71%);
     padding: 25px;
     border-radius: 10px;
@@ -25,22 +27,23 @@ body{
     font-weight: 600;
 }
 
-label{
+label {
     display: block;
     margin-bottom: 5px;
 }
 
-label.inline{
+label.inline {
     display: inline-block;
 }
 
-input, select{
+input,
+select {
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     margin-top: 15px;
     margin-bottom: 10px;
 }
@@ -48,11 +51,11 @@ input[type="checkbox"]{
 input[type="text"],
 input[type="email"],
 input[type="number"],
-select{
+select {
     width: 100%;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     background-color: rgb(49 0 0);
     color: white;
     padding: 15px;
@@ -64,13 +67,27 @@ input[type="submit"]{
     transition: .5s ease;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background-color: rgb(138, 93, 93);
     box-shadow: 1px 1px 10px black;
 }
 
-.error{
+.error {
     color: rgb(255, 203, 203);
     font-size: 15px;
     font-weight: 100;
+}
+
+#registroForm::before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: calc(100vw + 20px);
+    height: calc(100vh + 20px);
+    background-image: url("./img/fondo-vinito.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
 }
